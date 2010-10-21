@@ -36,8 +36,6 @@ class Hunspell(object):
         self.suggestions = []
         for i in range(0, self.retval):
              self.suggestions.append( c_char_p(p[i]).value )
-        #print self.suggestions
-        #print len(self.suggestions)
         self.freeSuggestions()
         return self.retval
 
@@ -52,9 +50,4 @@ class Hunspell(object):
          if self.checkWord(word) == 1: return []
          self.suggest(word)
          return self.suggestions
-
-
-#mh = Hunspell()
-#print mh.check('test!')
-#print mh.check('byebye')
 
