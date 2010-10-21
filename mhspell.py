@@ -15,7 +15,7 @@ def readFile(fname):
     linesList = fh.readlines()
     fh.close()
 
-    # seperate words out:
+    # separate out words:
     for i in range(0, len(linesList)):
         linesList[i] = linesList[i].rstrip('\n')
         linesList[i] = linesList[i].split(' ')
@@ -46,7 +46,7 @@ def getInput(word, suggList, lineno):
         if val == 0:
             return 0
         elif 0 < val and val <= len(suggList):
-            return val -1 #subtract 1 because python starts at 0.
+            return val 
         else:
             print "got something strange, please try again."
 
@@ -70,9 +70,8 @@ def spellcheck(a):
             if val == -1: writeFile('out.txt')
             elif val == 0: continue
             # we had a valid number, so do the swap.
-            a[line][i] = origword.replace(word, res[val])
+            a[line][i] = origword.replace(word, res[val-1])
 
-readFile('arabic.txt')
-#print linesList
+readFile('wrong.txt')
 spellcheck(linesList)
 writeFile('out.txt')

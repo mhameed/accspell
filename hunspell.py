@@ -18,8 +18,8 @@ hunspell.Hunspell_free_list.argtypes = (POINTER(c_int), POINTER(POINTER(c_char_p
 class Hunspell(object):
 
     def __init__(self):
-         afpath = '/usr/share/hunspell/ar_IQ.aff'
-         dpath = '/usr/share/hunspell/ar_IQ.dic'
+         afpath = '/usr/share/hunspell/en_GB.aff'
+         dpath = '/usr/share/hunspell/en_GB.dic'
          self.hunhandle = hunspell.Hunspell_create(afpath, dpath)
          a = c_char_p()
          p = pointer(a)
